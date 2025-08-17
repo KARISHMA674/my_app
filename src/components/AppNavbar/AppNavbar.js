@@ -143,10 +143,10 @@ export default function AppNavbar() {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "/", icon: <FiHome /> },
-    { name: "Learning", href: "/learning", icon: <FiBookOpen /> },
-    { name: "Assignment", href: "/assignment", icon: <FiFileText /> },
-    { name: "Resources", href: "/resources", icon: <FiBook /> },
+    { name: "Home", href: "/my_app/", icon: <FiHome /> },
+    { name: "Learning", href: "/my_app/learning", icon: <FiBookOpen /> },
+    { name: "Assignment", href: "/my_app/assignment", icon: <FiFileText /> },
+    { name: "Resources", href: "/my_app/resources", icon: <FiBook /> },
   ];
 
   return (

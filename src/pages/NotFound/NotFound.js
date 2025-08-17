@@ -44,7 +44,7 @@ export default function NotFound() {
     <NotFoundWrapper>
       <Title>404</Title>
       <Subtitle>Oops! The page you're looking for doesn't exist.</Subtitle>
-      <HomeButton to="/">Go Back Home</HomeButton>
+      <HomeButton to="/my_app/">Go Back Home</HomeButton>
     </NotFoundWrapper>
   );
 }

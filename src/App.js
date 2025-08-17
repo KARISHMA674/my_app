@@ -14,9 +14,9 @@ function App() {
       <div style={{ paddingTop: "2rem" }}>
         <Routes>
           <Route path="/my_app/" element={<HeroSection />} />
-          <Route path="/learning" element={<LearningPage />} />
-          <Route path="/assignment" element={<AssignmentPage />} />
-          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/my_app/learning" element={<LearningPage />} />
+          <Route path="/my_app/assignment" element={<AssignmentPage />} />
+          <Route path="/my_app/resources" element={<ResourcesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

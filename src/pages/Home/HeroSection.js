@@ -124,7 +124,7 @@ export default function HeroSection() {
         <HeroSubtitle>
           Learn the fundamentals of cloud technology with interactive lessons and practical examples
         </HeroSubtitle>
-        <CtaButton onClick={() => navigate("/learning")}>
+        <CtaButton onClick={() => navigate("/my_app/learning")}>
           Start Learning
         </CtaButton>
       </HeroContent>
