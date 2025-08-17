@@ -54,10 +54,10 @@ const LearningPage = () => {
     <Container>
       {/* Top Buttons */}
       <ButtonRow>
-        <ActionButton color="#6D28D9" onClick={() => navigate("/my_app/assignment")}>
+        <ActionButton color="#6D28D9" onClick={() => navigate("/my_app/assignment/")}>
           Assignment
         </ActionButton>
-        <ActionButton color="#0E7490" onClick={() => navigate("/my_app/resources")}>
+        <ActionButton color="#0E7490" onClick={() => navigate("/my_app/resources/")}>
           Resources
         </ActionButton>
       </ButtonRow>
