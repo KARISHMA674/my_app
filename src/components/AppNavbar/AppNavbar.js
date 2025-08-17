@@ -153,7 +153,7 @@ export default function AppNavbar() {
     <Navbar>
       <NavContainer>
         <NavContent>
-          <LogoContainer onClick={() => (window.location.href = "/")}>
+          <LogoContainer onClick={() => (window.location.href = "/my_app/")}>
             <LogoIcon>
               <FiCloud color="white" size={24} />
             </LogoIcon>

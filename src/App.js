@@ -13,7 +13,7 @@ function App() {
       <AppNavbar />
       <div style={{ paddingTop: "2rem" }}>
         <Routes>
-          <Route path="/" element={<HeroSection />} />
+          <Route path="/my_app/" element={<HeroSection />} />
           <Route path="/learning" element={<LearningPage />} />
           <Route path="/assignment" element={<AssignmentPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
