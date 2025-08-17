@@ -1,7 +1,16 @@
 // src/components/AppNavbar.jsx
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { FiCloud, FiMenu, FiX, FiHome, FiBookOpen, FiFileText, FiBook } from "react-icons/fi";
+import {
+  FiCloud,
+  FiMenu,
+  FiX,
+  FiHome,
+  FiBookOpen,
+  FiFileText,
+  FiBook,
+} from "react-icons/fi";
+import { useNavigate } from "react-router-dom"; // ✅ Import navigate
 
 // Styled Components
 const Navbar = styled.nav`
@@ -67,15 +76,15 @@ const DesktopMenu = styled.div`
   }
 `;
 
-const NavItem = styled.a`
+const NavItem = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   color: #374151;
-  text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
   transition: all 0.2s ease;
 
   &:hover {
@@ -115,15 +124,15 @@ const MobileMenu = styled.div`
   }
 `;
 
-const MobileNavItem = styled.a`
+const MobileNavItem = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
   color: #374151;
-  text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
   transition: all 0.2s ease;
 
   &:hover {
@@ -135,6 +144,7 @@ const MobileNavItem = styled.a`
 export default function AppNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+  const navigate = useNavigate(); // ✅ useNavigate hook
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 768);
@@ -143,17 +153,17 @@ export default function AppNavbar() {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "/my_app/", icon: <FiHome /> },
-    { name: "Learning", href: "/my_app/learning/", icon: <FiBookOpen /> },
-    { name: "Assignment", href: "/my_app/assignment/", icon: <FiFileText /> },
-    { name: "Resources", href: "/my_app/resources/", icon: <FiBook /> },
+    { name: "Home", path: "/my_app/", icon: <FiHome /> },
+    { name: "Learning", path: "/my_app/learning/", icon: <FiBookOpen /> },
+    { name: "Assignment", path: "/my_app/assignment/", icon: <FiFileText /> },
+    { name: "Resources", path: "/my_app/resources/", icon: <FiBook /> },
   ];
 
   return (
     <Navbar>
       <NavContainer>
         <NavContent>
-          <LogoContainer onClick={() => (window.location.href = "/my_app/")}>
+          <LogoContainer onClick={() => navigate("/my_app/")}>
             <LogoIcon>
               <FiCloud color="white" size={24} />
             </LogoIcon>
@@ -163,7 +173,7 @@ export default function AppNavbar() {
           {isDesktop ? (
             <DesktopMenu>
               {navItems.map((item) => (
-                <NavItem key={item.name} href={item.href}>
+                <NavItem key={item.name} onClick={() => navigate(item.path)}>
                   {item.icon}
                   {item.name}
                 </NavItem>
@@ -181,8 +191,10 @@ export default function AppNavbar() {
             {navItems.map((item) => (
               <MobileNavItem
                 key={item.name}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  navigate(item.path);
+                  setIsMenuOpen(false);
+                }}
               >
                 {item.icon}
                 {item.name}
