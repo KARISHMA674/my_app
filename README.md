@@ -3,7 +3,7 @@
 An interactive web-based platform to learn the fundamentals of **Cloud Computing**.  
 Built with **React.js**, this platform offers structured modules, quizzes, and visual content for students.  
 
-🌐 **Live Demo:** [Click Here to Visit](____)  
+🌐 **Live Demo:** [Click Here to Visit](https://karishma674.github.io/my_app/)  
 
 ---
 
